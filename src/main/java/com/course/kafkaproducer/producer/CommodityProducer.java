@@ -4,20 +4,21 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.kafka.core.KafkaTemplate;
 import org.springframework.stereotype.Service;
 
+import com.course.kafkaproducer.entity.Commodity;
 import com.course.kafkaproducer.entity.Employee;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-//@Service
-public class EmployeeJsonProducer {
+@Service
+public class CommodityProducer {
 
 	@Autowired
 	KafkaTemplate<String, String> kafkaTemplate;
 	
 	private ObjectMapper objectMapper = new ObjectMapper();
 	
-	public void sendMessage(Employee emp) throws JsonProcessingException {
-		var json = objectMapper.writeValueAsString(emp);
-		kafkaTemplate.send("t_employee", json);
+	public void sendMessage(Commodity commodity) throws JsonProcessingException {
+		var json = objectMapper.writeValueAsString(commodity);
+		kafkaTemplate.send("t_commodity",commodity.getName(), json);
 	}
 }
