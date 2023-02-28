@@ -13,7 +13,7 @@ import com.course.kafkaproducer.entity.Commodity;
 import com.course.kafkaproducer.producer.CommodityProducer;
 import com.fasterxml.jackson.core.JsonProcessingException;
 
-@Service
+//@Service
 public class CommodityScheduler {
 
 	private RestTemplate restTemplate = new RestTemplate();

@@ -9,7 +9,7 @@ import com.course.kafkaproducer.entity.Employee;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-@Service
+//@Service
 public class CommodityProducer {
 
 	@Autowired
